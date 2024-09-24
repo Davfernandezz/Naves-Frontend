@@ -6,7 +6,7 @@ import { Home } from '../Home/Home';
 import { Access } from '../Access/Access';
 import { Room } from '../Room/Room';
 import { Person } from '../Person/Person';
-import { Access_history } from '../Access_history/Access_history';
+import { AccessHistory } from '../accessHistory/accessHistory';
 
 function Body() {
   return (
@@ -18,7 +18,7 @@ function Body() {
         <Route path="/access" element={<Access />} />
         <Route path="/room" element={<Room />} />
         <Route path="/person" element={<Person />} />
-        <Route path="/access_history" element={<Access_history />} />
+        <Route path="/accessHistory" element={<AccessHistory />} />
       </Routes>
     </>
   );
