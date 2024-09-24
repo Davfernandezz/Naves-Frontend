@@ -13,6 +13,7 @@ export const Header = () => {
                 <div onClick={()=>navigate('/register')}>Register</div>
                 <div onClick={()=>navigate('/access')}>Access</div>
                 <div onClick={()=>navigate('/room')}>Room</div>
+                <div onClick={()=>navigate('/person')}>Person</div>
             </ul>
         </>
     )
