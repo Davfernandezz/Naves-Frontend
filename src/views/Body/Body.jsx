@@ -7,11 +7,13 @@ import { Access } from '../Access/Access';
 import { Room } from '../Room/Room';
 import { Person } from '../Person/Person';
 import { AccessHistory } from '../accessHistory/accessHistory';
+import { NotFound } from '../NotFound/NotFound';
 
 function Body() {
   return (
     <>
       <Routes>
+        <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
