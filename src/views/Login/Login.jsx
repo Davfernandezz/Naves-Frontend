@@ -1,3 +1,4 @@
+import { CInput } from "../../components/CInput/CInput";
 import "./Login.css";
 
 export const Login = () => {
@@ -27,10 +28,10 @@ export const Login = () => {
         <>
           <h1>Login</h1>
           <div>
-            <input type="email" name="email" placeholder='Email' onChange={handleChange} />
+            <CInput type="email" name="email" placeholder='Email' onChange={handleChange} />
           </div>
           <div>
-            <input type="password" name="password" placeholder='Password' onChange={handleChange} />
+            <CInput type="password" name="password" placeholder='Password' onChange={handleChange} />
           </div>
           <div>
             <input type="button" value="Login" onClick={login} />
