@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
-import "./Register.css";
+import React, { useEffect, useState } from 'react'
 import { CInput } from '../../components/CInput/CInput';
 import { registerUser } from '../../services/authApiCalls';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContext';
+import "./Register.css";
 
 export const Register = () => {
+
+    const { passport } = useAuth();
     const navigate = useNavigate();
 
     const [credentials, setCredentials] = useState({
@@ -16,6 +19,12 @@ export const Register = () => {
         phone: "",
         startup: ""
     });
+
+    useEffect(() => {
+        if (passport && passport.token) {
+            navigate("/");
+        }
+    }, [passport, navigate]);
 
     function handleChange(e) {
         const { name, value } = e.target;

@@ -3,8 +3,8 @@ import { CInput } from "../../components/CInput/CInput";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from 'jwt-decode';
 import { useAuth } from '../../contexts/AuthContext';
-import "./Login.css";
 import { loginUser } from "../../services/authApiCalls";
+import "./Login.css";
 
 export const Login = () => {
   const [credentials, setCredentials] = useState({
@@ -12,15 +12,15 @@ export const Login = () => {
     password: "",
   });
 
+  const { passport, setPassport } = useAuth();
+  const navigate = useNavigate();
+
   function handleChange(e) {
     setCredentials(prevState => ({
       ...prevState,
       [e.target.name]: e.target.value
     }));
   }
-
-  const { passport, setPassport } = useAuth();
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (passport && passport.token) {
@@ -40,7 +40,7 @@ export const Login = () => {
             tokenData: decodedToken,
           });
           localStorage.setItem("passport", JSON.stringify({ token, tokenData: decodedToken }));
-          navigate("/"); 
+          navigate("/access"); 
         } else {
           console.log("Login failed")
         }
