@@ -18,3 +18,20 @@ export const registerUser = async (credentials) => {
         throw error;
     }
 }
+
+export const loginUser = async (credentials) => {
+    try {
+        const request = await fetch(`${URL}/login`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(credentials),
+        });
+        const result = await request.json();
+        return result;
+    } catch (error) {
+        console.error("User logging error:", error);
+        throw error;
+    }
+}
