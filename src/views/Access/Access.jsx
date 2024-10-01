@@ -35,7 +35,7 @@ export const Access = () => {
               response = await registerExit(accessData, passport.token);
           }
           if (response.success) {
-              navigate("/");
+              navigate("/person");
           }
       } catch (error) {
           console.log(error);
