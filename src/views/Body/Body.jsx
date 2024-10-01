@@ -8,6 +8,7 @@ import { Room } from '../Room/Room';
 import { Person } from '../Person/Person';
 import { AccessHistory } from '../accessHistory/accessHistory';
 import { NotFound } from '../NotFound/NotFound';
+import { MyHistory } from '../MyHistory/Myhistory';
 
 function Body() {
   return (
@@ -20,6 +21,7 @@ function Body() {
         <Route path="/access" element={<Access />} />
         <Route path="/room" element={<Room />} />
         <Route path="/person" element={<Person />} />
+        <Route path="/myHistory" element={<MyHistory />} />
         <Route path="/accessHistory" element={<AccessHistory />} />
       </Routes>
     </>

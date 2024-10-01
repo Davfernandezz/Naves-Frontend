@@ -17,3 +17,19 @@ export const getCurrentAccess = async (userId, token) => {
         throw error;
     }
 };
+
+export const getAccessHistory = async (userId, token) => {
+    try {
+        const response = await fetch(`${URL}/${userId}/access-history`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+        });
+        return await response.json();
+    } catch (error) {
+        console.error("Error getting access history:", error);
+        throw error;
+    }
+};
