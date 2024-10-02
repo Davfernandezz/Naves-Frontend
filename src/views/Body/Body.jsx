@@ -10,6 +10,7 @@ import { AccessHistory } from '../accessHistory/accessHistory';
 import { NotFound } from '../NotFound/NotFound';
 import { MyHistory } from '../MyHistory/Myhistory';
 import { Reserve } from '../Reserve/Reserve';
+import { Administration } from '../Administration/Administration';
 
 function Body() {
   return (
@@ -25,6 +26,7 @@ function Body() {
         <Route path="/person" element={<Person />} />
         <Route path="/myHistory" element={<MyHistory />} />
         <Route path="/accessHistory" element={<AccessHistory />} />
+        <Route path="/administration" element={<Administration />} />
       </Routes>
     </>
   );
