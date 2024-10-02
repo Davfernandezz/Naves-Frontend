@@ -9,6 +9,7 @@ import { Person } from '../Person/Person';
 import { AccessHistory } from '../accessHistory/accessHistory';
 import { NotFound } from '../NotFound/NotFound';
 import { MyHistory } from '../MyHistory/Myhistory';
+import { Reserve } from '../Reserve/Reserve';
 
 function Body() {
   return (
@@ -19,6 +20,7 @@ function Body() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/access" element={<Access />} />
+        <Route path="/reserve" element={<Reserve />} />
         <Route path="/room" element={<Room />} />
         <Route path="/person" element={<Person />} />
         <Route path="/myHistory" element={<MyHistory />} />
