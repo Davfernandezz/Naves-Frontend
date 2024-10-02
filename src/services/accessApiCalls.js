@@ -52,3 +52,33 @@ export const registerReserve = async (data, token) => {
         throw error;
     }
 }
+
+export const cancelReservation = async (reservationId, token) => {
+    try {
+        const response = await fetch(`${URL}/reservations/${reservationId}`, {
+            method: 'PUT',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+        return await response.json();
+    } catch (error) {
+        console.error('Error cancelling reservation:', error);
+        throw error;
+    }
+};
+
+export const getActiveReservation = async (token) => {
+    try {
+        const response = await fetch(`${URL}/reservations/info`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+        return await response.json();
+    } catch (error) {
+        console.error('Error getting active reservation:', error);
+        throw error;
+    }
+};
