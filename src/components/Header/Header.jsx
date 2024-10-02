@@ -1,24 +1,99 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../../contexts/AuthContext';
+import './Header.css';
 
 export const Header = () => {
-
+    const { passport, setPassport } = useAuth();
     const navigate = useNavigate();
 
+    const handleLogout = () => {
+        localStorage.removeItem("passport");
+        setPassport(null);
+        navigate("/login");
+    };
+
+    const CSurfer = ({ path, content }) => (
+        <div className="nav-item" onClick={() => navigate(path)}>
+            {content}
+        </div>
+    );
+
     return (
-        <>
-            <ul>
-                <div onClick={()=>navigate('/')}>Home</div>
-                <div onClick={()=>navigate('/login')}>Login</div>
-                <div onClick={()=>navigate('/register')}>Register</div>
-                <div onClick={()=>navigate('/access')}>Access</div>
-                <div onClick={()=>navigate('/reserve')}>Reserve</div>
-                <div onClick={()=>navigate('/room')}>Room</div>
-                <div onClick={()=>navigate('/person')}>Person</div>
-                <div onClick={()=>navigate('/myHistory')}>My History</div>
-                <div onClick={()=>navigate('/accessHistory')}>Access History</div>
-                <div onClick={()=>navigate('/administration')}>Administraion</div>
-            </ul>
-        </>
-    )
-}
+        <nav className="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+            <div className="container">
+                <a
+                    className="navbar-brand"
+                    href="/"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        navigate('/');
+                    }}
+                >
+                    <span className="red">NAVES</span>Col·lab
+                </a>
+                <button
+                    className="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav ms-auto">
+                        <li className="nav-item">
+                            <CSurfer path="/" content="Home" />
+                        </li>
+                        {passport && passport.token ? (
+                            <>
+                                <li className="nav-item">
+                                    <CSurfer path="/access" content="Access" />
+                                </li>
+                                <li className="nav-item">
+                                    <CSurfer path="/reserve" content="Reserve" />
+                                </li>
+                                <li className="nav-item">
+                                    <CSurfer path="/room" content="Room" />
+                                </li>
+                                <li className="nav-item">
+                                    <CSurfer path="/person" content="Person" />
+                                </li>
+                                <li className="nav-item">
+                                    <CSurfer path="/myHistory" content="My History" />
+                                </li>
+                                {passport.tokenData?.role === "admin" && (
+                                    <>
+                                        <li className="nav-item">
+                                            <CSurfer path="/accessHistory" content="Access History" />
+                                        </li>
+                                        <li className="nav-item">
+                                            <CSurfer path="/administration" content="Administration" />
+                                        </li>
+                                    </>
+                                )}
+                                <li className="nav-item">
+                                    <div onClick={handleLogout}>
+                                        Logout
+                                    </div>
+                                </li>
+                            </>
+                        ) : (
+                            <>
+                                <li className="nav-item">
+                                    <CSurfer path="/login" content="Login" />
+                                </li>
+                                <li className="nav-item">
+                                    <CSurfer path="/register" content="Register" />
+                                </li>
+                            </>
+                        )}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    );
+};
