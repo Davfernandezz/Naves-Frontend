@@ -35,3 +35,20 @@ export const registerExit = async (data, token) => {
         throw error;
     }
 }
+
+export const registerReserve = async (data, token) => {
+    try {
+        const response = await fetch(`${URL}/reserve`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify(data),
+        });
+        return await response.json();
+    } catch (error) {
+        console.error("Error registering reservation:", error);
+        throw error;
+    }
+}
