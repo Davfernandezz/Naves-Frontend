@@ -40,31 +40,33 @@ export const Person = () => {
   };
 
   return (
-    <div className="current-access-wrapper">
-      <div className="current-access-container">
-        <h1>Your Current Status</h1>
+    <div className="person-wrapper">
+      <div className="person-container">
+        <h1 className="person-title text-center mb-4">Your Current Status</h1>
         {isLoading ? (
-          <p>Loading...</p>
+          <p className="text-center">Loading...</p>
         ) : personData ? (
           <div className="person-info">
-            <h2>{personData.person.name} {personData.person.surnames}</h2>
+            <h2 className="person-subtitle text-center mb-3">{personData.person.name} {personData.person.surnames}</h2>
             <p>Email: {personData.person.email}</p>
             <p>DNI: {personData.person.dni}</p>
             {personData.current_access ? (
-              <div className="access-info">
-                <h3>Current Access</h3>
+              <div className="access-info mt-4">
+                <h3 className="access-subtitle text-center mb-3">Current Access</h3>
                 <p>Room: {personData.current_access.room_name} (ID: {personData.current_access.room_id})</p>
                 <p>Entry Time: {new Date(personData.current_access.entry_datetime).toLocaleString()}</p>
               </div>
             ) : (
-              <div className="no-access">
-                <p>You are not currently in any room.</p>
+              <div className="no-access mt-4">
+                <p className="text-center">You are not currently in any room.</p>
               </div>
             )}
-            <button onClick={goToAccess} className="access-button">Go to Access Page</button>
+            <button onClick={goToAccess} className="btn btn-primary w-100 person-button mt-4">
+              Go to Access Page
+            </button>
           </div>
         ) : (
-          <p>No data found.</p>
+          <p className="text-center">No data found.</p>
         )}
       </div>
     </div>
