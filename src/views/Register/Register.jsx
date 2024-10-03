@@ -60,35 +60,49 @@ export const Register = () => {
     }
 
     return (
-        <>
-            <h1>Register</h1>
-            <div>
-                <CInput type="email" name="email" placeholder="Email" emitFunction={handleChange} />
+        <div className="register-wrapper">
+            <div className="register-container">
+                <h1 className="register-title text-center mb-4">Management System</h1>
+                <h2 className="register-subtitle text-center mb-4">User Register</h2>
+                <form>
+                    <div className="row mb-3">
+                        <div className="col-12 col-md-6">
+                            <CInput type="email" name="email" placeholder="Email" emitFunction={handleChange} className="form-control register-input" />
+                        </div>
+                        <div className="col-12 col-md-6">
+                            <CInput type="password" name="password" placeholder="Password" emitFunction={handleChange} className="form-control register-input" />
+                        </div>
+                    </div>
+                    <div className="row mb-3">
+                        <div className="col-12 col-md-6">
+                            <CInput type="text" name="name" placeholder="Name" emitFunction={handleChange} className="form-control register-input" />
+                        </div>
+                        <div className="col-12 col-md-6">
+                            <CInput type="text" name="surnames" placeholder="Surnames" emitFunction={handleChange} className="form-control register-input" />
+                        </div>
+                    </div>
+                    <div className="row mb-3">
+                        <div className="col-12 col-md-6">
+                            <CInput type="text" name="dni" placeholder="DNI" emitFunction={handleChange} className="form-control register-input" />
+                        </div>
+                        <div className="col-12 col-md-6">
+                            <CInput type="text" name="phone" placeholder="Phone" emitFunction={handleChange} className="form-control register-input" />
+                        </div>
+                    </div>
+                    <div className="mb-3">
+                        <CInput type="text" name="startup" placeholder="Startup" emitFunction={handleChange} className="form-control register-input" />
+                    </div>
+                    <button
+                        type="button"
+                        onClick={register}
+                        className="btn btn-primary w-100 register-button"
+                    >
+                        Register
+                    </button>
+                </form>
             </div>
-            <div>
-                <CInput type="password" name="password" placeholder="Password" emitFunction={handleChange} />
-            </div>
-            <div>
-                <CInput type="text" name="name" placeholder="Name" emitFunction={handleChange} />
-            </div>
-            <div>
-                <CInput type="text" name="surnames" placeholder="Surnames" emitFunction={handleChange} />
-            </div>
-            <div>
-                <CInput type="text" name="dni" placeholder="DNI" emitFunction={handleChange} />
-            </div>
-            <div>
-                <CInput type="text" name="phone" placeholder="Phone" emitFunction={handleChange} />
-            </div>
-            <div>
-                <CInput type="text" name="startup" placeholder="Startup" emitFunction={handleChange} />
-            </div>
-            <div>
-                <input type="button" value="Register" onClick={register} />
-            </div>
-        </>
+        </div>
     );
 }
-
 
 export default Register;
