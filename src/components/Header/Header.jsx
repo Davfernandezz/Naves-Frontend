@@ -20,7 +20,7 @@ export const Header = () => {
     );
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+        <nav className="navbar navbar-expand-lg navbar-light fixed-top">
             <div className="container">
                 <a
                     className="navbar-brand"
@@ -71,12 +71,12 @@ export const Header = () => {
                                             <CSurfer path="/accessHistory" content="Access History" />
                                         </li>
                                         <li className="nav-item">
-                                            <CSurfer path="/administration" content="Administration" />
+                                            <CSurfer path="/administration" content="Admin" />
                                         </li>
                                     </>
                                 )}
                                 <li className="nav-item">
-                                    <div onClick={handleLogout}>
+                                    <div className="nav-item" onClick={handleLogout}>
                                         Logout
                                     </div>
                                 </li>

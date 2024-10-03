@@ -1,13 +1,16 @@
 .navbar {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem; 
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999;
 }
 
 .navbar-brand {
-    font-size: 1.3rem;
+    font-size: 1.4rem; 
     font-weight: bold;
     color: #ffffff;
     text-transform: uppercase;
@@ -24,13 +27,14 @@
 }
 
 .nav-item {
-    margin-left: 11px;
+    margin-left: 10px;
     color: #ffffff;
     cursor: pointer;
     transition: color 0.3s ease;
     display: block;
     text-decoration: none;
-    font-weight: 385;
+    font-weight: 400;
+    font-size: 0.95rem; 
 }
 
 .nav-item:hover {
@@ -53,7 +57,8 @@
 
     .nav-item {
         margin-left: 0;
-        margin-bottom: 5px;
+        margin-bottom: 5px; 
+        font-size: 1rem; 
     }
 
     .navbar-collapse {
@@ -65,4 +70,11 @@
 .logout:focus,
 .red {
     color: #e63946;
+}
+
+
+@media (max-width: 1200px) {
+    .navbar-brand {
+        font-size: 1.2rem; /
+    }
 }

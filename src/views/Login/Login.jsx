@@ -52,20 +52,40 @@ export const Login = () => {
     }
   }
 
-      return (
-        <>
-          <h1>Login</h1>
-          <div>
-            <CInput type="email" name="email" placeholder='Email' emitFunction={handleChange} />
-          </div>
-          <div>
-            <CInput type="password" name="password" placeholder='Password' emitFunction={handleChange} />
-          </div>
-          <div>
-            <input type="button" value="Login" onClick={login} />
-          </div>
-        </>
-      )
-}
-
+  return (
+    <div className="login-wrapper">
+        <div className="login-container">
+            <h1 className="login-title text-center mb-4">Management System</h1>
+            <h2 className="login-subtitle text-center mb-4">User Login</h2>
+            <form>
+                <div className="mb-3">
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        onChange={handleChange}
+                        className="form-control login-input"
+                    />
+                </div>
+                <div className="mb-3">
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        onChange={handleChange}
+                        className="form-control login-input"
+                    />
+                </div>
+                <button
+                    type="button"
+                    onClick={login}
+                    className="btn btn-primary w-100 login-button"
+                >
+                    Login
+                </button>
+            </form>
+        </div>
+    </div>
+);
+};
 export default Login;
