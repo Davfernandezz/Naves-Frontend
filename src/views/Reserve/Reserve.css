@@ -1,0 +1,78 @@
+.reserve-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+    margin-top: 2em;
+    background-size: cover;
+    background-position: center;
+}
+
+.reserve-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reserve-title {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.reserve-subtitle {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.reserve-input {
+    border-radius: 0.375rem;
+    border-color: #ced4da;
+    background-color: rgba(255, 255, 255, 0.9); 
+}
+
+.reserve-input:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); 
+}
+
+.reserve-button {
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    padding: 0.75rem;
+    transition: background-color 0.3s ease;
+    color: #fff;
+}
+
+.btn-primary.reserve-button {
+    background-color: #28a745; 
+    border-color: #28a745;
+}
+
+.btn-primary.reserve-button:hover {
+    background-color: #218838;
+}
+
+.btn-danger.reserve-button {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger.reserve-button:hover {
+    background-color: #c82333;
+}
+
+.active-reservation p {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .reserve-container {
+        width: 90%;
+        padding: 1.5rem;
+    }
+}

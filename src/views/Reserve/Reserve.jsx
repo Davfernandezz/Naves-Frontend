@@ -85,46 +85,57 @@ export const Reserve = () => {
     };
 
     return (
-        <div className="reserve-container">
-            <h2>Manage Reservations</h2>
-            
-            {activeReservation ? (
-                <div className="active-reservation">
-                    <h3>Your Active Reservation</h3>
-                    <p>Room ID: {activeReservation.room_id}</p>
-                    <p>Entry Time: {new Date(activeReservation.entry_datetime).toLocaleString()}</p>
-                    <button onClick={handleCancel} disabled={isLoading}>
-                        {isLoading ? 'Cancelling...' : 'Cancel Reservation'}
-                    </button>
-                </div>
-            ) : (
-                <form onSubmit={handleSubmit}>
-                    <h3>Register New Reservation</h3>
-                    <div>
-                        <label htmlFor="roomId">Room ID:</label>
-                        <input
-                            type="number"
-                            id="roomId"
-                            value={roomId}
-                            onChange={(e) => setRoomId(e.target.value)}
-                            required
-                        />
+        <div className="reserve-wrapper">
+            <div className="reserve-container">
+                <h1 className="reserve-title text-center mb-4">Manage Reservations</h1>
+                
+                {activeReservation ? (
+                    <div className="active-reservation">
+                        <h2 className="reserve-subtitle text-center mb-3">Your Active Reservation</h2>
+                        <p>Room ID: {activeReservation.room_id}</p>
+                        <p>Entry Time: {new Date(activeReservation.entry_datetime).toLocaleString()}</p>
+                        <button 
+                            onClick={handleCancel} 
+                            disabled={isLoading}
+                            className="btn btn-danger w-100 reserve-button"
+                        >
+                            {isLoading ? 'Cancelling...' : 'Cancel Reservation'}
+                        </button>
                     </div>
-                    <div>
-                        <label htmlFor="entryDatetime">Entry Date and Time:</label>
-                        <input
-                            type="datetime-local"
-                            id="entryDatetime"
-                            value={entryDatetime}
-                            onChange={(e) => setEntryDatetime(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <button type="submit" disabled={isLoading}>
-                        {isLoading ? 'Registering...' : 'Register Reservation'}
-                    </button>
-                </form>
-            )}
+                ) : (
+                    <form onSubmit={handleSubmit}>
+                        <h2 className="reserve-subtitle text-center mb-3">Register New Reservation</h2>
+                        <div className="mb-3">
+                            <input
+                                type="number"
+                                id="roomId"
+                                value={roomId}
+                                onChange={(e) => setRoomId(e.target.value)}
+                                required
+                                placeholder="Room ID"
+                                className="form-control reserve-input"
+                            />
+                        </div>
+                        <div className="mb-3">
+                            <input
+                                type="datetime-local"
+                                id="entryDatetime"
+                                value={entryDatetime}
+                                onChange={(e) => setEntryDatetime(e.target.value)}
+                                required
+                                className="form-control reserve-input"
+                            />
+                        </div>
+                        <button 
+                            type="submit" 
+                            disabled={isLoading}
+                            className="btn btn-primary w-100 reserve-button"
+                        >
+                            {isLoading ? 'Registering...' : 'Register Reservation'}
+                        </button>
+                    </form>
+                )}
+            </div>
         </div>
     );
 }

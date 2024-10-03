@@ -10,14 +10,13 @@
 
 .register-container {
     width: 100%;
-    max-width: 500px; /* Aumenta un poco el ancho por más inputs */
+    max-width: 500px;
     padding: 2rem;
     background-color: rgba(255, 255, 255, 0.85);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Títulos */
 .register-title {
     color: #2c3e50;
     font-size: 2rem;
@@ -30,7 +29,6 @@
     margin-bottom: 1rem;
 }
 
-/* Inputs */
 .register-input {
     border-radius: 0.375rem;
     border-color: #ced4da;
@@ -42,7 +40,6 @@
     box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); 
 }
 
-/* Botón */
 .register-button {
     background-color: #28a745; 
     border-color: #28a745;
@@ -57,7 +54,6 @@
     background-color: #218838;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .register-container {
         width: 90%;
