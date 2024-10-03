@@ -43,33 +43,37 @@ export const Access = () => {
   };
 
   return (
-      <div className="access-registration-wrapper">
-          <div className="access-registration-container">
-              <h1>{isEntry ? "Register Entry" : "Register Exit"}</h1>
-              <h3>Enter the room ID to register your {isEntry ? "entry" : "exit"}</h3>
-              <div className="form-container">
-                  <input
-                      type="text"
-                      value={accessData.room_id}
-                      name="room_id"
-                      placeholder="Room ID"
-                      onChange={(e) => inputHandler(e)}
-                      className="form-control"
-                  />
-                  <input
-                      type="button"
-                      value={isEntry ? "Register Entry" : "Register Exit"}
-                      onClick={handleSubmit}
-                      className="btn-confirm"
-                  />
-                  <button 
-                      onClick={() => setIsEntry(!isEntry)} 
-                      className="btn-switch"
-                  >
-                      Switch to {isEntry ? "Exit" : "Entry"}
-                  </button>
-              </div>
-          </div>
+    <div className="access-wrapper">
+      <div className="access-container">
+        <h1 className="access-title text-center mb-2">
+          {isEntry ? "Register Entry" : "Register Exit"}
+        </h1>
+        <h2 className="access-subtitle text-center mb-4">
+          Enter the room ID to register your {isEntry ? "entry" : "exit"}
+        </h2>
+        <div className="form-container">
+          <input
+            type="text"
+            value={accessData.room_id}
+            name="room_id"
+            placeholder="Room ID"
+            onChange={(e) => inputHandler(e)}
+            className="form-control access-input mb-3"
+          />
+          <button
+            onClick={handleSubmit}
+            className="btn btn-primary access-button mb-3"
+          >
+            {isEntry ? "Register Entry" : "Register Exit"}
+          </button>
+          <button 
+            onClick={() => setIsEntry(!isEntry)} 
+            className="btn btn-secondary access-switch-button"
+          >
+            Switch to {isEntry ? "Exit" : "Entry"}
+          </button>
+        </div>
       </div>
+    </div>
   );
 }
