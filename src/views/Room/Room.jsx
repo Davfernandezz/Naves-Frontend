@@ -46,34 +46,41 @@ export const Room = () => {
   };
 
   return (
-    <div className="room-status-wrapper">
-      <div className="room-status-container">
-        <h1>Room Status</h1>
-        <div className="search-container">
+    <div className="room-wrapper">
+      <div className="room-container">
+        <h1 className="room-title text-center mb-2">Room Status</h1>
+        <h2 className="room-subtitle text-center mb-4">Discover the rooms and all their information</h2>
+        <div className="search-container mb-4">
           <input
             type="text"
             value={roomId}
             onChange={handleInputChange}
             placeholder="Enter Room ID"
-            className="room-id-input"
+            className="form-control room-input mb-3"
           />
-          <button onClick={fetchRoomStatus} className="search-button" disabled={isLoading}>
+          <button 
+            onClick={fetchRoomStatus} 
+            className="btn btn-primary room-button" 
+            disabled={isLoading}
+          >
             {isLoading ? "Loading..." : "Get Status"}
           </button>
         </div>
         {roomStatus && (
           <div className="status-info">
-            <h2>Room: {roomStatus.room_name}</h2>
-            <p>Capacity: {roomStatus.capacity}</p>
-            <p>Room Type: {roomStatus.room_type}</p>
-            <p>Current Occupancy: {roomStatus.current_occupancy}</p>
-            <p>Future Reservations: {roomStatus.future_reservations}</p>
+            <h3 className="room-name text-center mb-3">Room: {roomStatus.room_name}</h3>
+            <div className="room-details mb-4">
+              <p><strong>Capacity:</strong> {roomStatus.capacity}</p>
+              <p><strong>Room Type:</strong> {roomStatus.room_type}</p>
+              <p><strong>Current Occupancy:</strong> {roomStatus.current_occupancy}</p>
+              <p><strong>Future Reservations:</strong> {roomStatus.future_reservations}</p>
+            </div>
             <div className="occupants-list">
-              <h3>Current Occupants</h3>
+              <h3 className="occupants-title mb-3">Current Occupants</h3>
               {roomStatus.occupants.length > 0 ? (
-                <ul>
+                <ul className="list-unstyled">
                   {roomStatus.occupants.map((occupant, index) => (
-                    <li key={index}>
+                    <li key={index} className="mb-2">
                       {occupant.name} {occupant.surnames} - {occupant.email}
                     </li>
                   ))}
@@ -87,4 +94,4 @@ export const Room = () => {
       </div>
     </div>
   );
-};
+}

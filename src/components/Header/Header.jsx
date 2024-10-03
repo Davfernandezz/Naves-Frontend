@@ -57,7 +57,7 @@ export const Header = () => {
                                     <CSurfer path="/reserve" content="Reserve" />
                                 </li>
                                 <li className="nav-item">
-                                    <CSurfer path="/room" content="Room" />
+                                    <CSurfer path="/room" content="Rooms" />
                                 </li>
                                 <li className="nav-item">
                                     <CSurfer path="/person" content="Person" />
