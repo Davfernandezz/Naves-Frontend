@@ -35,13 +35,17 @@ export const MyHistory = () => {
       }
     } catch (error) {
       console.error("Error fetching access history:", error);
-      setError("An error occurred while fetching access history");
+      setError("Error occurred while fetching access history");
     }
     setIsLoading(false);
   };
 
   const loadMore = () => {
     setVisibleItems(prevVisibleItems => prevVisibleItems + 2);
+  };
+
+  const goToAccess = () => {
+    navigate('/access');
   };
 
   return (
@@ -74,7 +78,12 @@ export const MyHistory = () => {
             )}
           </>
         ) : (
-          <p className="text-center">No access history available.</p>
+          <div className="text-center">
+            <p className="mb-4">No access history available.</p>
+            <button onClick={goToAccess} className="btn btn-primary access-button">
+              Go to Access Page
+            </button>
+          </div>
         )}
       </div>
     </div>
