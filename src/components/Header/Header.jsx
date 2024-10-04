@@ -10,7 +10,7 @@ export const Header = () => {
     const handleLogout = () => {
         localStorage.removeItem("passport");
         setPassport(null);
-        navigate("/login");
+        navigate("/");
     };
 
     const CSurfer = ({ path, content }) => (

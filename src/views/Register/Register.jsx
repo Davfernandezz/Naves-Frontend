@@ -6,19 +6,12 @@ import { useAuth } from '../../contexts/AuthContext';
 import "./Register.css";
 
 export const Register = () => {
-
     const { passport } = useAuth();
     const navigate = useNavigate();
-
     const [credentials, setCredentials] = useState({
-        email: "",
-        password: "",
-        name: "",
-        surnames: "",
-        dni: "",
-        phone: "",
-        startup: ""
+        email: "", password: "", name: "", surnames: "", dni: "", phone: "", startup: ""
     });
+    const [error, setError] = useState("");
 
     useEffect(() => {
         if (passport && passport.token) {
@@ -28,34 +21,19 @@ export const Register = () => {
 
     function handleChange(e) {
         const { name, value } = e.target;
-        setCredentials((prevState) => ({
-            ...prevState,
-            [name]: value
-        }));
+        setCredentials(prev => ({ ...prev, [name]: value }));
     }
 
     async function register() {
-        const { email, password, name, surnames, dni, phone, startup } = credentials;
-
-        if (!email || !password || !name || !surnames || !dni) {
-            console.log("Name, surnames, email, password, and DNI are required");
-            return;
-        }
-
-        if (password.length < 9 || password.length > 17) {
-            console.log("Password must be between 9 and 17 characters");
-            return;
-        }
-
         try {
             const response = await registerUser(credentials);
             if (response.success) {
                 navigate('/login');
             } else {
-                alert(response.message);
+                setError(response.message);
             }
         } catch (error) {
-            console.log("Error en el registro:", error);
+            setError(error.message);
         }
     }
 
@@ -64,6 +42,7 @@ export const Register = () => {
             <div className="register-container">
                 <h1 className="register-title text-center mb-4">Management System</h1>
                 <h2 className="register-subtitle text-center mb-4">User Register</h2>
+                {error && <p className="error-message text-center mb-3">{error}</p>}
                 <form>
                     <div className="row mb-3">
                         <div className="col-12 col-md-6">

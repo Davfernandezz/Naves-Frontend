@@ -60,3 +60,9 @@
         padding: 1.5rem;
     }
 }
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.9rem;
+    font-weight: bold;
+}

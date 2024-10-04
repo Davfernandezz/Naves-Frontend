@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { CInput } from "../../components/CInput/CInput";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from 'jwt-decode';
 import { useAuth } from '../../contexts/AuthContext';
@@ -11,6 +10,7 @@ export const Login = () => {
     email: "",
     password: "",
   });
+  const [error, setError] = useState("");
 
   const { passport, setPassport } = useAuth();
   const navigate = useNavigate();
@@ -31,24 +31,19 @@ export const Login = () => {
   async function login() {
     try {
       const response = await loginUser(credentials);
-      if (response.success) {
-        const token = response.token; 
-        if (token) {
-          const decodedToken = jwtDecode(token);
-          setPassport({
-            token: token,
-            tokenData: decodedToken,
-          });
-          localStorage.setItem("passport", JSON.stringify({ token, tokenData: decodedToken }));
-          navigate("/access"); 
-        } else {
-          console.log("Login failed")
-        }
+      if (response.success && response.token) {
+        const decodedToken = jwtDecode(response.token);
+        setPassport({
+          token: response.token,
+          tokenData: decodedToken,
+        });
+        localStorage.setItem("passport", JSON.stringify({ token: response.token, tokenData: decodedToken }));
+        navigate("/person");
       } else {
-        console.log(response.message);
+        setError(response.message);
       }
     } catch (error) {
-      console.log(error.message);
+      setError(error.message);
     }
   }
 
@@ -57,6 +52,7 @@ export const Login = () => {
         <div className="login-container">
             <h1 className="login-title text-center mb-4">Management System</h1>
             <h2 className="login-subtitle text-center mb-4">User Login</h2>
+            {error && <p className="error-message text-center mb-3">{error}</p>}
             <form>
                 <div className="mb-3">
                     <input
@@ -86,6 +82,7 @@ export const Login = () => {
             </form>
         </div>
     </div>
-);
+  );
 };
+
 export default Login;
