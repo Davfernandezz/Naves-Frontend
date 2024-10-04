@@ -49,7 +49,7 @@ export const Room = () => {
     <div className="room-wrapper">
       <div className="room-container">
         <h1 className="room-title text-center mb-2">Room Status</h1>
-        <h2 className="room-subtitle text-center mb-4">Discover the rooms and all their information</h2>
+        <h2 className="room-subtitle text-center mb-4">Discover the rooms and all their information:</h2>
         <div className="search-container mb-4">
           <input
             type="text"

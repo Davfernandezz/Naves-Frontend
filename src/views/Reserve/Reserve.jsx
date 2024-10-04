@@ -91,7 +91,7 @@ export const Reserve = () => {
                 
                 {activeReservation ? (
                     <div className="active-reservation">
-                        <h2 className="reserve-subtitle text-center mb-3">Your Active Reservation</h2>
+                        <h2 className="reserve-subtitle text-center mb-3">Your Active Reservation:</h2>
                         <p>Room ID: {activeReservation.room_id}</p>
                         <p>Entry Time: {new Date(activeReservation.entry_datetime).toLocaleString()}</p>
                         <button 
@@ -104,7 +104,7 @@ export const Reserve = () => {
                     </div>
                 ) : (
                     <form onSubmit={handleSubmit}>
-                        <h2 className="reserve-subtitle text-center mb-3">Register New Reservation</h2>
+                        <h2 className="reserve-subtitle text-center mb-3">Register New Reservation:</h2>
                         <div className="mb-3">
                             <input
                                 type="number"

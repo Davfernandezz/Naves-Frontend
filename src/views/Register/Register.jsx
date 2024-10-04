@@ -41,7 +41,7 @@ export const Register = () => {
         <div className="register-wrapper">
             <div className="register-container">
                 <h1 className="register-title text-center mb-4">Management System</h1>
-                <h2 className="register-subtitle text-center mb-4">User Register</h2>
+                <h2 className="register-subtitle text-center mb-4">User Register:</h2>
                 {error && <p className="error-message text-center mb-3">{error}</p>}
                 <form>
                     <div className="row mb-3">

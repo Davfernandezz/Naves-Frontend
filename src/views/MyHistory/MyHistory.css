@@ -19,13 +19,13 @@
 }
 
 .history-title {
-    color: #2c3e50;
+    color:  0 4px 8px rgba(0, 0, 0, 0.1);
     font-size: 2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .history-subtitle {
-    color: #7f8c8d;
+    color: #2c3e50;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
 }

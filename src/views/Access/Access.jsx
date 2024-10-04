@@ -49,7 +49,7 @@ export const Access = () => {
           {isEntry ? "Register Entry" : "Register Exit"}
         </h1>
         <h2 className="access-subtitle text-center mb-4">
-          Enter the room ID to register your {isEntry ? "entry" : "exit"}
+          Enter the room ID to register your {isEntry ? "entry" : "exit"}:
         </h2>
         <div className="form-container">
           <input

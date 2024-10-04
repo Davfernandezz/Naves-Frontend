@@ -38,23 +38,32 @@ export const Person = () => {
   const goToAccess = () => {
     navigate("/access");
   };
-
   return (
     <div className="person-wrapper">
       <div className="person-container">
-        <h1 className="person-title text-center mb-4">Your Current Status</h1>
+        {personData && (
+          <div className="welcome-message text-center mb-4">
+            <h1 className="welcome-title">Welcome back,</h1>
+            <h2 className="welcome-name">{personData.person.name}!</h2>
+          </div>
+        )}
+        <h3 className="person-title text-center mb-4">Your current profile:</h3>
         {isLoading ? (
           <p className="text-center">Loading...</p>
         ) : personData ? (
           <div className="person-info">
-            <h2 className="person-subtitle text-center mb-3">{personData.person.name} {personData.person.surnames}</h2>
-            <p>Email: {personData.person.email}</p>
-            <p>DNI: {personData.person.dni}</p>
+            <div className="info-card mb-4">
+              <p><strong>Email:</strong> {personData.person.email}</p>
+              <p><strong>DNI:</strong> {personData.person.dni}</p>
+            </div>
             {personData.current_access ? (
               <div className="access-info mt-4">
-                <h3 className="access-subtitle text-center mb-3">Current Access</h3>
-                <p>Room: {personData.current_access.room_name} (ID: {personData.current_access.room_id})</p>
-                <p>Entry Time: {new Date(personData.current_access.entry_datetime).toLocaleString()}</p>
+                <h4 className="access-subtitle text-center mb-3">Current Access:</h4>
+                <div className="info-card">
+                  <p><strong>Room:</strong> {personData.current_access.room_name}</p>
+                  <p><strong>Room ID:</strong> {personData.current_access.room_id}</p>
+                  <p><strong>Entry Time:</strong> {new Date(personData.current_access.entry_datetime).toLocaleString()}</p>
+                </div>
               </div>
             ) : (
               <div className="no-access mt-4">
@@ -62,7 +71,7 @@ export const Person = () => {
               </div>
             )}
             <button onClick={goToAccess} className="btn btn-primary w-100 person-button mt-4">
-              Go to Access Page
+              Manage Access
             </button>
           </div>
         ) : (

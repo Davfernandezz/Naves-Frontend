@@ -52,7 +52,7 @@ export const MyHistory = () => {
     <div className="history-wrapper">
       <div className="history-container">
         <h1 className="history-title text-center mb-2">My Access History</h1>
-        <h2 className="history-subtitle text-center mb-4">Recent Entries and Exits</h2>
+        <h2 className="history-subtitle text-center mb-4">Recent Entries and Exits:</h2>
         {isLoading && <p className="text-center">Loading...</p>}
         {error && <p className="error text-center">Error: {error}</p>}
         {accessHistory && accessHistory.length > 0 ? (

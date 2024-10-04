@@ -19,15 +19,15 @@
 }
 
 .room-title {
-    color: #2c3e50;
+    color: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-size: 2rem;
-    margin-bottom: 1rem; /* Increased space between title and subtitle */
+    margin-bottom: 1rem;
 }
 
 .room-subtitle {
-    color: #7f8c8d;
+    color: #2c3e50;
     font-size: 1.2rem;
-    margin-bottom: 2rem; /* Increased space after subtitle */
+    margin-bottom: 2rem; 
 }
 
 .room-name {

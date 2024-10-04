@@ -51,7 +51,7 @@ export const Login = () => {
     <div className="login-wrapper">
         <div className="login-container">
             <h1 className="login-title text-center mb-4">Management System</h1>
-            <h2 className="login-subtitle text-center mb-4">User Login</h2>
+            <h2 className="login-subtitle text-center mb-4">User Login:</h2>
             {error && <p className="error-message text-center mb-3">{error}</p>}
             <form>
                 <div className="mb-3">
