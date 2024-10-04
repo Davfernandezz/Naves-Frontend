@@ -6,11 +6,11 @@ import { Home } from '../Home/Home';
 import { Access } from '../Access/Access';
 import { Room } from '../Room/Room';
 import { Person } from '../Person/Person';
-import { AccessHistory } from '../accessHistory/accessHistory';
 import { NotFound } from '../NotFound/NotFound';
 import { MyHistory } from '../MyHistory/Myhistory';
 import { Reserve } from '../Reserve/Reserve';
 import { Administration } from '../Administration/Administration';
+import AccessHistory from '../accessHistory/accessHistory';
 
 function Body() {
   return (
