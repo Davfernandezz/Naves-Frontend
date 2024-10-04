@@ -15,7 +15,7 @@ export const Access = () => {
 
   useEffect(() => {
       if (!passport || !passport.token) {
-          navigate("/");
+          navigate("/login");
       }
   }, [passport, navigate]);
 

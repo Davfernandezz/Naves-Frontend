@@ -15,7 +15,7 @@ export const Reserve = () => {
 
     useEffect(() => {
         if (!passport || !passport.token) {
-            navigate('/');
+            navigate('/login');
         } else {
             fetchActiveReservation();
         }

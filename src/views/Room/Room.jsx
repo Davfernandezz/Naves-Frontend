@@ -14,7 +14,7 @@ export const Room = () => {
 
   useEffect(() => {
     if (!passport || !passport.token) {
-      navigate("/");
+      navigate("/login");
     }
   }, [passport, navigate]);
 

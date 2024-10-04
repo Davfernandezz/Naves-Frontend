@@ -13,7 +13,7 @@ export const Person = () => {
 
   useEffect(() => {
     if (!passport || !passport.token) {
-      navigate("/");
+      navigate("/login");
     } else {
       fetchCurrentAccess();
     }

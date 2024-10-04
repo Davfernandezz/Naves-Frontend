@@ -1,59 +1,80 @@
 import React, { useState, useEffect } from 'react';
-import './AccessHistory.css';
 import { getAccessHistories, getRoomAccessHistories } from '../../services/accessHistoryApiCalls';
 import { useAuth } from '../../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
+import './AccessHistory.css';
 
 export const AccessHistory = () => {
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
-  const [roomId, setRoomId] = useState('');
+  const [accessData, setAccessData] = useState({
+    startDate: '',
+    endDate: '',
+    roomId: ''
+  });
   const [histories, setHistories] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const [visibleItems, setVisibleItems] = useState(2);
 
   const { passport } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!passport || !passport.token) {
+      navigate("/login");
+    }
+  }, [passport, navigate]);
+
+  const inputHandler = (e) => {
+    setAccessData({
+      ...accessData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const fetchAccessHistories = async (e) => {
     e.preventDefault();
-    if (!passport || !passport.token) {
-      setError('You must be logged in to view access histories.');
-      return;
-    }
-
     setIsLoading(true);
     setError('');
     setHistories([]);
+    setVisibleItems(2);
 
     try {
       let response;
-      if (roomId) {
-        response = await getRoomAccessHistories(passport.token, roomId, startDate, endDate);
+      if (accessData.roomId) {
+        response = await getRoomAccessHistories(passport.token, accessData.roomId, accessData.startDate, accessData.endDate);
       } else {
-        response = await getAccessHistories(passport.token, startDate, endDate);
+        response = await getAccessHistories(passport.token, accessData.startDate, accessData.endDate);
       }
 
       if (response.success) {
-        setHistories(roomId ? response.data.access_histories : response.data);
+        setHistories(accessData.roomId ? response.data.access_histories : response.data);
       } else {
         setError(response.message);
       }
-    } catch (err) {
-      setError(err.message);
+    } catch (error) {
+      console.log(error);
+      setError('An unexpected error occurred. Please try again.');
     } finally {
       setIsLoading(false);
     }
   };
 
+  const loadMore = () => {
+    setVisibleItems(prevVisibleItems => prevVisibleItems + 2);
+  };
+
   return (
-    <div className="access-history-wrapper">
-      <div className="access-history-container">
-        <h1 className="access-history-title text-center mb-4">Access History</h1>
+    <div className="history-wrapper">
+      <div className="history-container">
+        <h1 className="history-title text-center mb-2">Access History</h1>
+        <h2 className="history-subtitle text-center mb-4">Search for Entries and Exits:</h2>
         <form onSubmit={fetchAccessHistories}>
           <div className="mb-3">
             <input
               type="date"
-              value={startDate}
-              onChange={(e) => setStartDate(e.target.value)}
+              name="startDate"
+              value={accessData.startDate}
+              onChange={inputHandler}
               className="form-control"
               required
             />
@@ -61,8 +82,9 @@ export const AccessHistory = () => {
           <div className="mb-3">
             <input
               type="date"
-              value={endDate}
-              onChange={(e) => setEndDate(e.target.value)}
+              name="endDate"
+              value={accessData.endDate}
+              onChange={inputHandler}
               className="form-control"
               required
             />
@@ -70,14 +92,15 @@ export const AccessHistory = () => {
           <div className="mb-3">
             <input
               type="text"
-              value={roomId}
-              onChange={(e) => setRoomId(e.target.value)}
+              name="roomId"
+              value={accessData.roomId}
+              onChange={inputHandler}
               placeholder="Room ID (optional)"
               className="form-control"
             />
           </div>
           <button type="submit" className="btn btn-primary w-100 access-history-button">
-            Fetch Access History
+            Show Access History
           </button>
         </form>
 
@@ -87,16 +110,26 @@ export const AccessHistory = () => {
         {histories.length > 0 && (
           <div className="mt-4">
             <h2 className="text-center mb-3">Results</h2>
-            <ul className="access-history-list">
-              {histories.map((history) => (
-                <li key={history.id} className="access-history-item">
-                  <p><strong>Person:</strong> {history.person_name}</p>
-                  <p><strong>Room:</strong> {history.room_name}</p>
-                  <p><strong>Entry:</strong> {new Date(history.entry_datetime).toLocaleString()}</p>
-                  <p><strong>Exit:</strong> {history.exit_datetime ? new Date(history.exit_datetime).toLocaleString() : 'N/A'}</p>
+            <ul className="history-list">
+              {histories.slice(0, visibleItems).map((history) => (
+                <li key={history.id} className="history-item mb-4">
+                  <h3 className="history-item-title">{history.room_name}</h3>
+                  <p>Room ID: {history.room_id}</p>
+                  <p>Person: {history.person_name}</p>
+                  <p>Entry: {new Date(history.entry_datetime).toLocaleString()}</p>
+                  {history.exit_datetime && (
+                    <p>Exit: {new Date(history.exit_datetime).toLocaleString()}</p>
+                  )}
                 </li>
               ))}
             </ul>
+            {visibleItems < histories.length && (
+              <div className="text-center mt-4">
+                <button onClick={loadMore} className="btn btn-primary load-more-button">
+                  Load More
+                </button>
+              </div>
+            )}
           </div>
         )}
       </div>
