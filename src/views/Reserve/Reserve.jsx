@@ -9,6 +9,7 @@ export const Reserve = () => {
     const [entryDatetime, setEntryDatetime] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [activeReservation, setActiveReservation] = useState(null);
+    const [error, setError] = useState(null);
 
     const { passport } = useAuth();
     const navigate = useNavigate();
@@ -23,6 +24,7 @@ export const Reserve = () => {
 
     const fetchActiveReservation = async () => {
         setIsLoading(true);
+        setError(null);
         try {
             const response = await getActiveReservation(passport.token);
             if (response.success && response.data) {
@@ -31,7 +33,7 @@ export const Reserve = () => {
                 setActiveReservation(null);
             }
         } catch (error) {
-            console.error('Error fetching active reservation:', error);
+            setError(error.message);
             setActiveReservation(null);
         }
         setIsLoading(false);
@@ -40,6 +42,7 @@ export const Reserve = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);
+        setError(null);
 
         try {
             const reservationData = {
@@ -47,20 +50,17 @@ export const Reserve = () => {
                 entry_datetime: new Date(entryDatetime).toISOString()
             };
 
-            console.log("Reservation data to send:", reservationData);
-
             const response = await registerReserve(reservationData, passport.token);
 
             if (response.success) {
-                console.log('Reservation registered successfully!');
                 fetchActiveReservation();
                 setRoomId('');
                 setEntryDatetime('');
             } else {
-                console.log(response.message || 'Could not register the reservation');
+                setError(response.message || 'Could not register the reservation');
             }
         } catch (error) {
-            console.error('Error occurred while registering the reservation:', error);
+            setError(error.message);
         }
 
         setIsLoading(false);
@@ -70,16 +70,16 @@ export const Reserve = () => {
         if (!activeReservation) return;
 
         setIsLoading(true);
+        setError(null);
         try {
             const response = await cancelReservation(activeReservation.id, passport.token);
             if (response.success) {
-                console.log('Reservation cancelled successfully!');
                 setActiveReservation(null);
             } else {
-                console.log(response.message || 'Could not cancel the reservation');
+                setError(response.message || 'Could not cancel the reservation');
             }
         } catch (error) {
-            console.error('Error occurred while cancelling the reservation:', error);
+            setError(error.message);
         }
         setIsLoading(false);
     };
@@ -87,7 +87,8 @@ export const Reserve = () => {
     return (
         <div className="reserve-wrapper">
             <div className="reserve-container">
-                <h1 className="reserve-title text-center mb-4">Manage Reservations</h1>
+                <h1 className="reserve-title text-center mb-2">Manage Reservations</h1>
+                {error && <p className="error-message text-center mb-3">{error}</p>}
                 
                 {activeReservation ? (
                     <div className="active-reservation">
@@ -139,3 +140,5 @@ export const Reserve = () => {
         </div>
     );
 }
+
+export default Reserve;

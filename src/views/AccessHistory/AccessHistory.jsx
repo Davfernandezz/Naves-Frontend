@@ -67,7 +67,8 @@ export const AccessHistory = () => {
     <div className="history-wrapper">
       <div className="history-container">
         <h1 className="history-title text-center mb-2">Access History</h1>
-        <h2 className="history-subtitle text-center mb-4">Search for Entries and Exits:</h2>
+        <h2 className="history-subtitle text-center mb-2">Search for Entries and Exits:</h2>
+        {error && <p className="error-message text-center mb-3">{error}</p>}
         <form onSubmit={fetchAccessHistories}>
           <div className="mb-3">
             <input
@@ -103,9 +104,8 @@ export const AccessHistory = () => {
             Show Access History
           </button>
         </form>
-
+  
         {isLoading && <p className="text-center mt-4">Loading...</p>}
-        {error && <p className="error-message text-center mt-4">{error}</p>}
         
         {histories.length > 0 && (
           <div className="mt-4">

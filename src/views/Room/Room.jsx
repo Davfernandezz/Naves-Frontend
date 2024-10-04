@@ -8,6 +8,7 @@ export const Room = () => {
   const [roomId, setRoomId] = useState("");
   const [roomStatus, setRoomStatus] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const { passport } = useAuth();
   const navigate = useNavigate();
@@ -24,32 +25,34 @@ export const Room = () => {
 
   const fetchRoomStatus = async () => {
     if (!roomId) {
-      console.log("Please enter a room ID");
+      setError("Please enter a room ID");
       return;
     }
 
     setIsLoading(true);
     setRoomStatus(null);
+    setError(null);
 
     try {
       const response = await getCurrentRoomStatus(roomId, passport.token);
       if (response.success) {
         setRoomStatus(response.data);
       } else {
-        console.log(response.message || "Failed to fetch room status");
+        setError(response.message);
       }
     } catch (error) {
-      console.error("Error fetching room status:", error.message);
+      setError(error.message);
+    } finally {
+      setIsLoading(false);
     }
-
-    setIsLoading(false);
   };
 
   return (
     <div className="room-wrapper">
       <div className="room-container">
         <h1 className="room-title text-center mb-2">Room Status</h1>
-        <h2 className="room-subtitle text-center mb-4">Discover the rooms and all their information:</h2>
+        <h2 className="room-subtitle text-center mb-2">Discover the rooms and all their information:</h2>
+        {error && <p className="error-message text-center mb-3">{error}</p>}
         <div className="search-container mb-4">
           <input
             type="text"
