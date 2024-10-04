@@ -19,7 +19,7 @@
 }
 
 .navbar-brand:hover {
-    color: #e63946;
+    color: #e31313;
 }
 
 .navbar-nav {
@@ -38,7 +38,7 @@
 }
 
 .nav-item:hover {
-    color: #e63946;
+    color:  #e31313;
 }
 
 .navbar-toggler {
@@ -69,7 +69,7 @@
 .logout:hover,
 .logout:focus,
 .red {
-    color: #e63946;
+    color:  #e31313;
 }
 
 
