@@ -13,6 +13,7 @@ import AccessHistory from '../accessHistory/accessHistory';
 import { GenerateReport } from '../GenerateReport/GenerateReport';
 import Administration from '../Administration/Administration';
 import { GetReport } from '../GetReport/GetReport';
+import { RoomUsage } from '../RoomUsage/RoomUsage';
 
 function Body() {
   return (
@@ -31,6 +32,7 @@ function Body() {
         <Route path="/administration" element={<Administration />} />
         <Route path="/generateReport" element={<GenerateReport />} />
         <Route path="/getReport" element={<GetReport />} />
+        <Route path="/roomUsage" element={<RoomUsage />} />
       </Routes>
     </>
   );

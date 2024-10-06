@@ -33,7 +33,7 @@ export const Administration = () => {
             Get Reports by Date Range
           </button>
           <button
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/roomUsage')}
             className="admin-btn"
           >
             Get Room Usage Statistics

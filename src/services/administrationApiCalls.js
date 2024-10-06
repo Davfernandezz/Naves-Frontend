@@ -36,3 +36,22 @@ export const getDateReport = async (token, queryParams) => {
       throw error;
     }
   };
+
+  export const getRoomUsageStats = async (token) => {
+    try {
+      const response = await fetch(`${URL}/room-usage`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        }
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return await response.json();
+    } catch (error) {
+      console.error("Error retrieving room usage statistics:", error);
+      throw error;
+    }
+  };
