@@ -12,6 +12,7 @@ import { Reserve } from '../Reserve/Reserve';
 import AccessHistory from '../accessHistory/accessHistory';
 import { GenerateReport } from '../GenerateReport/GenerateReport';
 import Administration from '../Administration/Administration';
+import { GetReport } from '../GetReport/GetReport';
 
 function Body() {
   return (
@@ -29,6 +30,7 @@ function Body() {
         <Route path="/accessHistory" element={<AccessHistory />} />
         <Route path="/administration" element={<Administration />} />
         <Route path="/generateReport" element={<GenerateReport />} />
+        <Route path="/getReport" element={<GetReport />} />
       </Routes>
     </>
   );

@@ -17,3 +17,22 @@ export const generateDailyReport = async (token) => {
         throw error;
     }
 };
+
+export const getDateReport = async (token, queryParams) => {
+    try {
+      const response = await fetch(`${URL}/reports?${queryParams}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        }
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return await response.json();
+    } catch (error) {
+      console.error("Error generating date report:", error);
+      throw error;
+    }
+  };

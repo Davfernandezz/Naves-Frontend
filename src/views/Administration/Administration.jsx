@@ -27,7 +27,7 @@ export const Administration = () => {
             Generate Daily Report
           </button>
           <button
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/getReport')}
             className="admin-btn"
           >
             Get Reports by Date Range
