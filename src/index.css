@@ -35,7 +35,7 @@ body::before {
   background-blend-mode: overlay;
   z-index: -1;
 }
-p, th, td, tr, label, input, select, .btn {
+p, th, td, tr, label, input, select, .btn, button {
   font-family: 'Nunito', sans-serif;
 
 }
