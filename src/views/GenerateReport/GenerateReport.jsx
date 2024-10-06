@@ -71,7 +71,7 @@ export const GenerateReport = () => {
         {error && <p className="generate-report-error">{error}</p>}
         {report && (
           <div className="generate-report-content">
-            <h3>Report Date: {new Date(report.report_date).toLocaleDateString("en-US")}</h3>
+            <h3>of the month</h3>
             <p>Total Accesses: {report.total_accesses} | Total Absences: {report.total_absences}</p>
 
             <div className="generate-report-section">

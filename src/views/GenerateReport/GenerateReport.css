@@ -1,5 +1,5 @@
 .generate-report-wrapper {
-  display: flex;
+    display: flex;
     justify-content: center;
     align-items: flex-start;
     min-height: 85vh;
@@ -10,16 +10,16 @@
 }
 
 .generate-report-container {
-  width: 100%;
-  max-width: 800px;
-  background-color: #f5f5f5;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h2, h3, h4 {
-  color: #333;
+  color: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .generate-report-btn {
