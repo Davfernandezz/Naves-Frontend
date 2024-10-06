@@ -51,7 +51,6 @@ export const RoomUsage = () => {
             <p>Total Cancellations: {stats.total_cancellations}</p>
             <p>Total Hours Used: {stats.total_hours_used}</p>
 
-            <h3 className="room-usage-section-title">Room Statistics</h3>
             <ul className="room-usage-list">
               {stats.room_stats.map((room, index) => (
                 <li key={index} className="room-usage-item">
