@@ -1,6 +1,6 @@
 # Naves Coworking Frontend🪐
 
-Welcome to my Naves Coworking Frontend project, I hope you like it!💯
+Welcome to my Naves Coworking Frontend project, I hope you like it!🏵️
 <br><br>
 <img width="800" alt="Portada" src="https://github.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/assets/74038190/7d484dc9-68a9-4ee6-a767-aea59035c12d">
 </a>
@@ -23,12 +23,22 @@ Welcome to my Naves Coworking Frontend project, I hope you like it!💯
 
 ## Description📚
 
-<br><br>
-<p align="center">
-<img width="250" alt="" src="img/Descripcion.jpg">
-</p>
+This frontend project focuses on offering an intuitive and friendly interface that allows users to interact fluidly with the key functionalities of coworking. Through a modern and adaptable application, users will be able to easily manage their room reservations, monitor their arrivals and departures in real time, and access personalized reports that facilitate administrative decision-making.
+
+The frontend focus is on ensuring that every user, from administrators to workers, has a fast, efficient and visually appealing experience, achieving seamless integration with backend services. The design has been designed to simplify navigation, offering a platform that adjusts to the needs of day-to-day life in a collaborative space, optimizing both the management of operations and interaction with users.
 
 ## Objetive🎯
+
+This frontend system will allow users to easily interact with the platform to register their accesses, make room reservations, and review their activity history. For administrators, the interface will provide accessible tools to generate detailed reports and monitor room usage statistics. By offering a user-friendly design and seamless integration with the backend services, the goal is to enhance resource management, improve organization, and provide a secure and transparent environment for all users.
+
+- **User Experience:** Create a smooth and intuitive platform that minimizes the effort required to manage access and reservations.
+
+- **Transparency: Offer** users and administrators a clear view of their access history and room reservations through easy-to-navigate components.
+
+- **Data Visualization:** Enable administrators to make informed decisions through visualized statistics and reports on room usage.
+
+- **Security:** Implement user-friendly security measures to ensure only authorized users have access to the rooms.
+
 
 
 ## Stack📒
