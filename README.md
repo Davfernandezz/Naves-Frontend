@@ -109,7 +109,7 @@ Used technology:
 <img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/Reserve1.JPG">
 <img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/Reserve2.JPG">
 
-### <Room>📓
+### Room📓
 
 <img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/Room1.JPG">
 <img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/Room2.JPG">
@@ -132,9 +132,9 @@ Used technology:
 
 
 ## Future functionalities⏭️
-- 
-- 
-- 
+- Custom filters
+- Notifications
+- User Management
 - ...
 
 
