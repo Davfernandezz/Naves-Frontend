@@ -23,9 +23,13 @@ Welcome to my Naves Coworking Frontend project, I hope you like it!🏵️
 
 ## Description📚
 
-This frontend project focuses on offering an intuitive and friendly interface that allows users to interact fluidly with the key functionalities of coworking. Through a modern and adaptable application, users will be able to easily manage their room reservations, monitor their arrivals and departures in real time, and access personalized reports that facilitate administrative decision-making.
+This frontend project focuses on offering an intuitive and friendly interface that allows users to interact fluidly with the key functionalities of coworking. Through a modern and adaptable application, users will be able to easily manage their room reservations, monitor their arrivals and departures in real time, and access personalized reports that facilitate administrative decision making.
 
-The frontend focus is on ensuring that every user, from administrators to workers, has a fast, efficient and visually appealing experience, achieving seamless integration with backend services. The design has been designed to simplify navigation, offering a platform that adjusts to the needs of day-to-day life in a collaborative space, optimizing both the management of operations and interaction with users.
+The frontend focus is on ensuring that every user, from administrators to workers, has a fast, efficient and visually appealing experience, achieving seamless integration with backend services. The design has been designed to simplify navigation, offering a platform that adjusts to the needs of day to day life in a collaborative space, optimizing both the management of operations and interaction with users.
+
+<p align="center">
+<img width="215" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/Descripcion.png">
+</p>
 
 ## Objetive🎯
 
@@ -96,6 +100,7 @@ Used technology:
 
 
 ## Views🧩
+ Admin user: david@david.com password:123456789
 
 ### Home🏠
 <img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/Home.JPG">
@@ -126,11 +131,11 @@ Used technology:
 
 <img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/MyHistory.JPG">
 
-### Access history👀 
+### Access history👀 (Admin)
 
 <img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/AccessHistory.JPG">
 
-### Administration💯
+### Administration💯 (Admin)
 
 <img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/Administration.JPG">
 
