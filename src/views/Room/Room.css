@@ -1,0 +1,103 @@
+.room-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 85vh;
+    margin-top: 2em;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+}
+
+.room-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.room-title {
+    color: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.room-subtitle {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin-bottom: 2rem; 
+}
+
+.room-name {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.room-input {
+    border-radius: 0.375rem;
+    border: 1px solid #ced4da;
+    padding: 0.75rem;
+    font-size: 1rem;
+}
+
+.room-input:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.room-button {
+    background-color: #28a745;
+    border-color: #28a745;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    padding: 0.75rem;
+    transition: background-color 0.3s ease;
+    color: #fff;
+    width: 100%;
+}
+
+.room-button:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+.room-button:disabled {
+    background-color: #6c757d;
+}
+
+.room-details {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.room-details p {
+    margin-bottom: 0.5rem;
+}
+
+.occupants-title {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.occupants-list ul {
+    padding-left: 0;
+}
+
+.occupants-list li {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .room-container {
+        width: 95%;
+        padding: 1.5rem;
+    }
+}

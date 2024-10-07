@@ -1,0 +1,81 @@
+.navbar {
+    padding: 0.5rem 1rem; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.navbar-brand {
+    font-size: 1.4rem; 
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.navbar-brand:hover {
+    color: #e31313;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.nav-item {
+    margin-left: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    display: block;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.95rem; 
+}
+
+.nav-item:hover {
+    color:  #e31313;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 991px) {
+    .navbar-nav {
+        margin-left: 0;
+        margin-top: 10px;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    .nav-item {
+        margin-left: 0;
+        margin-bottom: 5px; 
+        font-size: 1rem; 
+    }
+
+    .navbar-collapse {
+        flex-grow: 1;
+    }
+}
+
+.logout:hover,
+.logout:focus,
+.brand {
+    color:  #e31313;
+    font-family: 'Merriweather', serif;
+}
+
+
+@media (max-width: 1200px) {
+    .navbar-brand {
+        font-size: 1.2rem; /
+    }
+}

@@ -1,4 +1,4 @@
-.login-wrapper {
+.reserve-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,7 +8,7 @@
     background-position: center;
 }
 
-.login-container {
+.reserve-container {
     width: 100%;
     max-width: 400px;
     padding: 2rem;
@@ -17,31 +17,30 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.login-title {
-    color:  0 4px 8px rgba(0, 0, 0, 0.1);
+.reserve-title {
+    color: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-size: 2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
-.login-subtitle {
+.reserve-subtitle {
     color: #2c3e50;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-.login-input {
+.reserve-input {
     border-radius: 0.375rem;
     border-color: #ced4da;
     background-color: rgba(255, 255, 255, 0.9); 
 }
 
-.login-input:focus {
+.reserve-input:focus {
     border-color: #28a745;
     box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); 
 }
 
-.login-button {
-    background-color: #28a745; 
-    border-color: #28a745;
+.reserve-button {
     border-radius: 0.375rem;
     font-size: 1rem;
     padding: 0.75rem;
@@ -49,19 +48,31 @@
     color: #fff;
 }
 
-.login-button:hover {
+.btn-primary.reserve-button {
+    background-color: #28a745; 
+    border-color: #28a745;
+}
+
+.btn-primary.reserve-button:hover {
     background-color: #218838;
 }
 
+.btn-danger.reserve-button {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger.reserve-button:hover {
+    background-color: #c82333;
+}
+
+.active-reservation p {
+    margin-bottom: 0.5rem;
+}
+
 @media (max-width: 768px) {
-    .login-container {
+    .reserve-container {
         width: 90%;
         padding: 1.5rem;
     }
-}
-
-.error-message {
-    color: #dc3545;
-    font-size: 0.9rem;
-    font-weight: bold;
 }
