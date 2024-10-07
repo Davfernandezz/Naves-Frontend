@@ -92,39 +92,43 @@ Used technology:
 
 ### Login and Register🔑
 
-<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/.JPG">
-<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/.JPG">
+<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/Login.JPG">
+<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/Register.JPG">
 
 ### Person👥
 
-<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/.JPG">
+<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/Person.JPG">
 
 ### Access💯
 
-<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/.JPG">
-<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/.JPG">
+<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/Access.JPG">
 
 
 ### Reserve✏️
 
-<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/.JPG">
+<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/Reserve1.JPG">
+<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/Reserve2.JPG">
 
 ### <Room>📓
 
-<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/.JPG">
+<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/Room1.JPG">
+<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/Room2.JPG">
 
 ### My history🔍
 
-<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/.JPG">
+<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/MyHistory.JPG">
 
-### Access history👀
+### Access history👀 
 
-<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/.JPG">
+<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/AccessHistory1.JPG">
+<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/AccessHistory2.JPG">
 
 ### Administration💯
 
-<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/JPG">
-<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/.JPG">
+<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/Administration.JPG">
+<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/Administration1.JPG">
+<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/Administration2.JPG">
+<img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/Administration3.JPG">
 
 
 ## Future functionalities⏭️
