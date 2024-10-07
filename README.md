@@ -2,7 +2,7 @@
 
 Welcome to my Naves Coworking Frontend project, I hope you like it!💯
 <br><br>
-<img width="600" alt="Portada" src="">
+<img width="600" alt="Portada" src="https://github.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/assets/74038190/7d484dc9-68a9-4ee6-a767-aea59035c12d">
 </a>
 
 <details>
@@ -67,7 +67,7 @@ Used technology:
 </div>
 
 
-### Local installation Frontend📊
+## Local installation Frontend📊
 
 1. Clone the repository
 2. ``` $ npm install  ```
