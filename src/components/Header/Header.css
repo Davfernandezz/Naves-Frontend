@@ -68,8 +68,9 @@
 
 .logout:hover,
 .logout:focus,
-.red {
+.brand {
     color:  #e31313;
+    font-family: 'Merriweather', serif;
 }
 
 
