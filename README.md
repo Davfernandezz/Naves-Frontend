@@ -33,11 +33,11 @@ The frontend focus is on ensuring that every user, from administrators to worker
 
 ## Objetive🎯
 
-This frontend system will allow users to easily interact with the platform to register their accesses, make room reservations, and review their activity history. For administrators, the interface will provide accessible tools to generate detailed reports and monitor room usage statistics. By offering a user-friendly design and seamless integration with the backend services, the goal is to enhance resource management, improve organization, and provide a secure and transparent environment for all users.
+This frontend system will allow users to easily interact with the platform to register their accesses, make room reservations, and review their activity history. For administrators, the interface will provide accessible tools to generate detailed reports and monitor room usage statistics. By offering a user friendly design and seamless integration with the backend services, the goal is to enhance resource management, improve organization, and provide a secure and transparent environment for all users.
 
 - **User Experience:** Create a smooth and intuitive platform that minimizes the effort required to manage access and reservations.
 
-- **Transparency: Offer** users and administrators a clear view of their access history and room reservations through easy-to-navigate components.
+- **Transparency:** Offer users and administrators a clear view of their access history and room reservations through easy to navigate components.
 
 - **Data Visualization:** Enable administrators to make informed decisions through visualized statistics and reports on room usage.
 
@@ -100,7 +100,6 @@ Used technology:
 
 
 ## Views🧩
- Admin user: david@david.com password:123456789
 
 ### Home🏠
 <img width="1426" alt="Captura de pantalla 2023-01-30 a las 20 20 38" src="img/Home.JPG">
