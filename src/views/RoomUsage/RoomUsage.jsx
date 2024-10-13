@@ -56,7 +56,6 @@ export const RoomUsage = () => {
                 <li key={index} className="room-usage-item">
                   <h4>{room.room_name}</h4>
                   <p>Total Accesses: {room.total_accesses}</p>
-                  <p>Completed Accesses: {room.completed_accesses}</p>
                   <p>Cancelled Accesses: {room.cancelled_accesses}</p>
                   <p>Total Hours Used: {room.total_hours_used}</p>
                   <p>Average Duration: {room.average_duration} hours</p>
